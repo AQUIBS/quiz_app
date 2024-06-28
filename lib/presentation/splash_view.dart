@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-
+import 'package:quiz_app/constants/color.dart';
+import 'package:quiz_app/constants/text.dart';
 import 'dashboard/dashboard_view.dart';
 
 class SplashView extends StatefulWidget {
@@ -21,7 +21,14 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(alignment: Alignment.center, child: const Text("Quizo")),
+      backgroundColor: AppColors.primaryGreen,
+      body: Container(
+          alignment: Alignment.center,
+          child: Text(
+            "Quizo",
+            style: AppTheme.spaceHeadline
+                .copyWith(color: AppColors.secondaryYellow),
+          )),
     );
   }
 

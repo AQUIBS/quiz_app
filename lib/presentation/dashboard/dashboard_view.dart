@@ -4,7 +4,7 @@ import 'package:quiz_app/constants/color.dart';
 import 'package:quiz_app/constants/text.dart';
 import 'package:quiz_app/controller/quiz_controller.dart';
 import 'package:quiz_app/presentation/dashboard/component/navigationbar.dart';
-import 'package:quiz_app/presentation/quiz_view.dart';
+import 'package:quiz_app/presentation/quizboard/quiz_view.dart';
 
 class DashBoardView extends StatelessWidget {
   const DashBoardView({super.key});
