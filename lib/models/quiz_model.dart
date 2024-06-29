@@ -1,9 +1,8 @@
+import 'package:quiz_app/constants/data.dart';
 import 'package:quiz_app/models/question_model.dart';
 
-import '../controller/quiz_controller.dart';
-
 class QuizModel {
-  final QuestionsModel? question;
+  final List<QuestionsModel>? questionsArray;
   final Answer? answer;
   final int? userSelectedOption;
   final int? correctOption;
@@ -14,7 +13,7 @@ class QuizModel {
   final List<Answer>? report;
 
   QuizModel(
-      this.question,
+      this.questionsArray,
       this.answer,
       this.userSelectedOption,
       this.correctOption,
@@ -25,12 +24,11 @@ class QuizModel {
       this.report);
 
   factory QuizModel.init() {
-    return QuizModel(
-        QuestionsModel(), Answer.uncheck, -1, -1, 0, 0, 0, false, []);
+    return QuizModel([], Answer.uncheck, -1, -1, 0, 0, 0, false, []);
   }
 
   QuizModel copyWith(
-      {QuestionsModel? question,
+      {List<QuestionsModel>? questionsArray,
       Answer? answer,
       int? userSelectedOption,
       int? correctOption,
@@ -40,7 +38,7 @@ class QuizModel {
       int? questionCount,
       List<Answer>? report}) {
     return QuizModel(
-        question ?? this.question,
+        questionsArray ?? this.questionsArray,
         answer ?? this.answer,
         userSelectedOption ?? this.userSelectedOption,
         correctOption ?? this.correctOption,

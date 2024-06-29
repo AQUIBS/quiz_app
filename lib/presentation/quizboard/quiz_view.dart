@@ -43,7 +43,7 @@ class QuizView extends ConsumerWidget {
               style: AppTheme.spaceTitle3,
             ),
             Text(
-              "${quiz.questionCount} Questions",
+              "${quiz.questionsArray!.length} Questions",
               style: AppTheme.urbanistsubTitle1,
             )
           ],

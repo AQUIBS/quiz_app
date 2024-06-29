@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/constants/color.dart';
+import 'package:quiz_app/constants/data.dart';
 import 'package:quiz_app/constants/text.dart';
 import 'package:quiz_app/controller/quiz_controller.dart';
 import 'package:quiz_app/presentation/score_card_view.dart';
@@ -21,9 +22,12 @@ class ActionButton extends ConsumerWidget {
           Expanded(
             child: InkWell(
               onTap: () {
-                ref.read(quizProvider.notifier).skipQuestion();
-                print(
-                    "index ${quiz.questionsIndex!}  count ${quiz.questionCount}");
+                
+                if (quiz.answer == Answer.uncheck) {
+                  ref.read(quizProvider.notifier).skipQuestion();
+                } else {
+                  print("Can't Skip if any answer if selected");
+                }
               },
               child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 5),
@@ -46,6 +50,8 @@ class ActionButton extends ConsumerWidget {
               onTap: () {
                 if (quiz.answer != Answer.uncheck) {
                   ref.read(quizProvider.notifier).nextQuestion();
+                } else {
+                  print("Please select provided options");
                 }
               },
               child: Container(

@@ -2,8 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/constants/color.dart';
+import 'package:quiz_app/constants/data.dart';
 import 'package:quiz_app/constants/text.dart';
 import 'package:quiz_app/controller/quiz_controller.dart';
+
 
 class ScoreCardView extends ConsumerWidget {
   const ScoreCardView({super.key});

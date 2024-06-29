@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/constants/color.dart';
+import 'package:quiz_app/constants/data.dart';
 import 'package:quiz_app/constants/text.dart';
 import 'package:quiz_app/controller/quiz_controller.dart';
 import 'package:quiz_app/models/quiz_model.dart';
@@ -9,7 +10,6 @@ class QuestionBox extends ConsumerWidget {
   const QuestionBox({
     super.key,
   });
-  final int correctAns = 3;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final quiz = ref.watch(quizProvider);
@@ -38,12 +38,13 @@ class QuestionBox extends ConsumerWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            quiz.question!.question.toString(),
+            quiz.questionsArray![quiz.questionsIndex!].question!,
             style: AppTheme.spaceTitle2.copyWith(color: AppColors.primaryGreen),
           ),
           const SizedBox(height: 12),
           ListView.builder(
-            itemCount: quiz.question!.options!.length,
+            itemCount:
+                quiz.questionsArray![quiz.questionsIndex!].options!.length,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
@@ -65,7 +66,8 @@ class QuestionBox extends ConsumerWidget {
                             width: .5, color: setBoarderColor(index, quiz)),
                         borderRadius: BorderRadius.circular(30)),
                     child: Text(
-                      quiz.question!.options![index],
+                      quiz.questionsArray![quiz.questionsIndex!]
+                          .options![index],
                       textAlign: TextAlign.center,
                       style: AppTheme.spaceSubtile1
                           .copyWith(color: AppColors.primaryGreen),

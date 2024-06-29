@@ -142,126 +142,641 @@ class SampleData {
         "points": 20
       }
     ],
-    "FlutterQuestions": [
+    "PythonQuestions": [
       {
-        "question": "What is the purpose of the 'GlobalKey' in Flutter?",
+        "question": "Which keyword is used to define a function in Python?",
+        "options": ["function", "define", "def", "func"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question": "How do you start a comment in Python?",
+        "options": ["//", "/*", "#", "--"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question": "Which of these data types is immutable in Python?",
+        "options": ["list", "dictionary", "set", "tuple"],
+        "correctOption": 3,
+        "points": 10
+      },
+      {
+        "question": "What is the output of print(2 ** 3)?",
+        "options": ["6", "8", "9", "10"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question":
+            "Which module in Python is used to work with regular expressions?",
+        "options": ["regex", "pyre", "re", "rex"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question":
+            "How do you create a variable with the floating number 2.8 in Python?",
+        "options": ["x = 2.8", "x == 2.8", "float x = 2.8", "x := 2.8"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question":
+            "Which method is used to add an element at the end of a list in Python?",
+        "options": ["append()", "add()", "insert()", "extend()"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the correct file extension for Python files?",
+        "options": [".python", ".pt", ".pyth", ".py"],
+        "correctOption": 3,
+        "points": 10
+      },
+      {
+        "question":
+            "Which of the following is used to create an empty class in Python?",
+        "options": ["pass", "continue", "None", "empty"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "How do you insert COMMENTS in Python code?",
+        "options": ["/* comment */", "// comment", "# comment", "-- comment"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question": "How can you get the length of a list in Python?",
         "options": [
-          "To uniquely identify a widget",
-          "To manage the state of a widget",
-          "To access the widget's context",
-          "All of the above"
+          "length(mylist)",
+          "len(mylist)",
+          "list.size(mylist)",
+          "size(mylist)"
+        ],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question":
+            "Which of the following is a correct syntax to import a module in Python?",
+        "options": [
+          "import module",
+          "import 'module'",
+          "include module",
+          "require module"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "How do you create a dictionary in Python?",
+        "options": ["{}", "[]", "()", "<>"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question":
+            "Which of the following is a framework for web development in Python?",
+        "options": ["Django", "Laravel", "Spring", "Rails"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "What does the 'len()' function do?",
+        "options": [
+          "Returns the length of an object",
+          "Deletes an object",
+          "Adds an element to an object",
+          "Reverses an object"
+        ],
+        "correctOption": 0,
+        "points": 10
+      }
+    ],
+    "JavaQuestions": [
+      {
+        "question": "Which keyword is used to define a class in Java?",
+        "options": ["class", "define", "public", "void"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the extension of Java bytecode files?",
+        "options": [".class", ".java", ".byte", ".obj"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "Which method is the entry point of a Java program?",
+        "options": ["start()", "main()", "entry()", "begin()"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question": "What is the superclass of all classes in Java?",
+        "options": ["MainClass", "PrimaryClass", "Object", "BaseClass"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question":
+            "Which of these is a valid declaration of a main method in Java?",
+        "options": [
+          "public static void main(String[] args)",
+          "public void main(String[] args)",
+          "static void main(String args)",
+          "void main(String[] args)"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "Which keyword is used to inherit a class in Java?",
+        "options": ["extend", "extends", "implements", "inherit"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question": "Which package contains the Random class?",
+        "options": ["java.util", "java.io", "java.net", "java.lang"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the output of 9 / 2 in Java?",
+        "options": ["4.5", "4", "5", "4.0"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question": "Which of the following is not a Java keyword?",
+        "options": ["static", "Boolean", "void", "private"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question":
+            "Which of these cannot be used for a variable name in Java?",
+        "options": ["identifier", "keyword", "variable", "class"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question": "What is the default value of a boolean variable in Java?",
+        "options": ["true", "false", "0", "null"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question":
+            "Which method can be used to find the length of a string in Java?",
+        "options": ["length()", "size()", "getLength()", "getSize()"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "How do you start a single-line comment in Java?",
+        "options": ["/*", "//", "#", "<!--"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question": "Which of the following is a loop structure in Java?",
+        "options": ["for", "while", "do-while", "All of the above"],
+        "correctOption": 3,
+        "points": 10
+      },
+      {
+        "question": "Which of these is a marker interface in Java?",
+        "options": ["Serializable", "Cloneable", "Remote", "All of the above"],
+        "correctOption": 3,
+        "points": 10
+      }
+    ],
+    "JSQuestions": [
+      {
+        "question":
+            "Which of the following is a correct way to declare a variable in JavaScript?",
+        "options": [
+          "var myVar;",
+          "variable myVar;",
+          "v myVar;",
+          "declare myVar;"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "Which company developed JavaScript?",
+        "options": ["Microsoft", "Apple", "Netscape", "Sun Microsystems"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question": "How do you write a comment in JavaScript?",
+        "options": [
+          "<!-- comment -->",
+          "// comment",
+          "# comment",
+          "/* comment */"
+        ],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question":
+            "Which method is used to select an element by its ID in JavaScript?",
+        "options": [
+          "getElementById()",
+          "getElementByClass()",
+          "querySelector()",
+          "getElementsByTagName()"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question":
+            "What is the correct syntax for referring to an external script called 'script.js'?",
+        "options": [
+          "<script src='script.js'>",
+          "<script href='script.js'>",
+          "<script link='script.js'>",
+          "<script ref='script.js'>"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "Which of the following is a JavaScript framework?",
+        "options": ["Laravel", "Django", "React", "Rails"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question": "How do you create an array in JavaScript?",
+        "options": [
+          "var myArray = [];",
+          "var myArray = {};",
+          "var myArray = ();",
+          "var myArray = <>;"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question":
+            "How do you round the number 7.25 to the nearest integer in JavaScript?",
+        "options": [
+          "Math.round(7.25)",
+          "Math.rnd(7.25)",
+          "round(7.25)",
+          "rnd(7.25)"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question":
+            "Which operator is used to assign a value to a variable in JavaScript?",
+        "options": ["*", "x", "=", "-"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question":
+            "Which built-in method combines the text of two strings and returns a new string?",
+        "options": ["append()", "concat()", "attach()", "combine()"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question": "Which symbol is used for comments in JavaScript?",
+        "options": ["//", "/*", "#", "<!--"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the correct way to write a JavaScript array?",
+        "options": [
+          "var colors = ['red', 'green', 'blue']",
+          "var colors = 'red', 'green', 'blue'",
+          "var colors = (1:'red', 2:'green', 3:'blue')",
+          "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question":
+            "Which event occurs when the user clicks on an HTML element?",
+        "options": ["onchange", "onmouseclick", "onclick", "onmouseover"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question":
+            "What is the correct JavaScript syntax to write 'Hello World'?",
+        "options": [
+          "document.write('Hello World')",
+          "response.write('Hello World')",
+          "('Hello World')",
+          "document.writeln('Hello World')"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "How do you declare a JavaScript variable?",
+        "options": [
+          "var carName;",
+          "variable carName;",
+          "v carName;",
+          "carName var;"
+        ],
+        "correctOption": 0,
+        "points": 10
+      }
+    ],
+    "CQuestions": [
+      {
+        "question":
+            "Which of the following is the correct syntax to include a user-defined header file in C++?",
+        "options": [
+          "#include <file>",
+          "#include 'file'",
+          "include file",
+          "#include \"file\""
         ],
         "correctOption": 3,
-        "points": 30,
-        "id": "b001"
+        "points": 10
       },
       {
         "question":
-            "Which method would you override to customize the behavior when a StatefulWidget is disposed?",
+            "Which of the following is used to create an object of a class in C++?",
         "options": [
-          "dispose()",
-          "deactivate()",
-          "didChangeDependencies()",
-          "didUpdateWidget()"
+          "ClassName objectName;",
+          "objectName = new ClassName;",
+          "objectName : ClassName;",
+          "ClassName(objectName);"
         ],
         "correctOption": 0,
-        "points": 30,
-        "id": "b002"
+        "points": 10
       },
       {
         "question":
-            "How can you optimize a widget rebuild performance in Flutter?",
-        "options": [
-          "Using const constructors",
-          "Using keys",
-          "Using the RepaintBoundary widget",
-          "All of the above"
-        ],
-        "correctOption": 3,
-        "points": 30,
-        "id": "b003"
+            "What is the output of the following code? \nint main() { int x = 10; cout << x; return 0; }",
+        "options": ["10", "x", "0", "Compilation Error"],
+        "correctOption": 0,
+        "points": 10
       },
       {
-        "question": "What does the 'InheritedWidget' do in Flutter?",
-        "options": [
-          "Holds data that can be accessed by descendant widgets",
-          "Manages the state of its child widgets",
-          "Provides a widget that has been inherited from another widget",
-          "Allows the creation of complex animations"
-        ],
-        "correctOption": 0,
-        "points": 30,
-        "id": "b004"
+        "question": "Which of the following is not a valid C++ data type?",
+        "options": ["int", "float", "boolean", "char"],
+        "correctOption": 2,
+        "points": 10
       },
       {
-        "question": "How would you implement a custom painter in Flutter?",
-        "options": [
-          "Using the CustomPainter class",
-          "Using the Canvas class directly",
-          "Using the ShapeBorder class",
-          "Using the BoxPainter class"
-        ],
+        "question": "What is the correct syntax to declare a pointer in C++?",
+        "options": ["int *ptr;", "int ptr;", "int &ptr;", "pointer int ptr;"],
         "correctOption": 0,
-        "points": 30,
-        "id": "b005"
+        "points": 10
       },
       {
-        "question": "Which widget is used to handle gestures in Flutter?",
-        "options": [
-          "GestureDetector",
-          "Listener",
-          "GestureHandler",
-          "EventDetector"
-        ],
-        "correctOption": 0,
-        "points": 30,
-        "id": "b006"
+        "question": "Which keyword is used to define a constant in C++?",
+        "options": ["constant", "const", "define", "static"],
+        "correctOption": 1,
+        "points": 10
       },
       {
         "question":
-            "What is the difference between 'mainAxisAlignment' and 'crossAxisAlignment' in a Row widget?",
+            "Which of the following correctly declares an array in C++?",
         "options": [
-          "mainAxisAlignment aligns children horizontally, crossAxisAlignment aligns children vertically",
-          "mainAxisAlignment aligns children vertically, crossAxisAlignment aligns children horizontally",
-          "mainAxisAlignment aligns children along the main axis, crossAxisAlignment aligns children along the cross axis",
-          "There is no difference"
+          "array{10};",
+          "array[10];",
+          "int array[10];",
+          "int array(10);"
         ],
         "correctOption": 2,
-        "points": 30,
-        "id": "b007"
+        "points": 10
       },
       {
         "question":
-            "In Flutter, what is the difference between 'StreamBuilder' and 'FutureBuilder'?",
+            "Which function is used to find the length of a string in C++?",
+        "options": ["length()", "strlen()", "size()", "sizeof()"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question": "Which of the following is a valid loop construct in C++?",
+        "options": ["for", "foreach", "repeat", "loop"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "What does 'nullptr' represent in C++?",
         "options": [
-          "StreamBuilder handles asynchronous data streams, FutureBuilder handles a single asynchronous computation",
-          "FutureBuilder handles asynchronous data streams, StreamBuilder handles a single asynchronous computation",
-          "StreamBuilder is used for handling real-time data, FutureBuilder is not",
-          "There is no difference"
+          "A null pointer",
+          "A null character",
+          "A void pointer",
+          "An undefined variable"
         ],
         "correctOption": 0,
-        "points": 30,
-        "id": "b008"
+        "points": 10
       },
       {
         "question":
-            "Which architectural pattern does the 'Provider' package in Flutter support?",
-        "options": ["MVC", "MVVM", "Redux", "BLoC"],
-        "correctOption": 1,
-        "points": 30,
-        "id": "b009"
+            "Which of the following is a correct way to allocate memory dynamically in C++?",
+        "options": [
+          "int *ptr = new int;",
+          "int ptr = new int;",
+          "int *ptr = malloc(sizeof(int));",
+          "int ptr = malloc(sizeof(int));"
+        ],
+        "correctOption": 0,
+        "points": 10
       },
       {
-        "question": "How do you perform dependency injection in Flutter?",
-        "options": [
-          "Using the Provider package",
-          "Using the InheritedWidget",
-          "Using the GetIt package",
-          "All of the above"
-        ],
+        "question":
+            "Which keyword is used to return control from a function back to the calling function in C++?",
+        "options": ["exit", "break", "continue", "return"],
         "correctOption": 3,
-        "points": 30,
-        "id": "b010"
+        "points": 10
+      },
+      {
+        "question":
+            "Which of the following operators cannot be overloaded in C++?",
+        "options": ["+", "=", "::", "++"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question":
+            "Which access specifier in C++ makes a class member accessible only within the same class?",
+        "options": ["public", "private", "protected", "default"],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question": "What is the purpose of a constructor in C++?",
+        "options": [
+          "To deallocate memory",
+          "To initialize objects",
+          "To copy objects",
+          "To call other functions"
+        ],
+        "correctOption": 1,
+        "points": 10
+      }
+    ],
+    "FlutterQuestions": [
+      {
+        "question":
+            "Which language is primarily used to write Flutter applications?",
+        "options": ["Java", "Kotlin", "Dart", "Swift"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question": "Which company developed Flutter?",
+        "options": ["Apple", "Facebook", "Google", "Microsoft"],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question": "What is the command to create a new Flutter project?",
+        "options": [
+          "flutter new project",
+          "flutter create project",
+          "flutter create",
+          "flutter new"
+        ],
+        "correctOption": 2,
+        "points": 10
+      },
+      {
+        "question":
+            "Which widget is used to create an immutable container in Flutter?",
+        "options": [
+          "Container",
+          "StatelessWidget",
+          "StatefulWidget",
+          "InheritedWidget"
+        ],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question": "How do you add a package dependency in a Flutter project?",
+        "options": [
+          "Add it to pubspec.yaml",
+          "Add it to dependencies.yaml",
+          "Add it to packages.yaml",
+          "Add it to flutter.yaml"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the default build method in a StatefulWidget?",
+        "options": [
+          "@override build",
+          "Widget build",
+          "Stateful build",
+          "createState"
+        ],
+        "correctOption": 1,
+        "points": 10
+      },
+      {
+        "question":
+            "Which command is used to run a Flutter app on an emulator or device?",
+        "options": [
+          "flutter run",
+          "flutter start",
+          "flutter execute",
+          "flutter play"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question":
+            "Which widget is used to lay out widgets vertically or horizontally in Flutter?",
+        "options": ["Column", "Row", "Stack", "Both Column and Row"],
+        "correctOption": 3,
+        "points": 10
+      },
+      {
+        "question": "How do you specify an image asset in a Flutter project?",
+        "options": [
+          "Add it to assets in pubspec.yaml",
+          "Add it to images in pubspec.yaml",
+          "Add it to resources in pubspec.yaml",
+          "Add it to pictures in pubspec.yaml"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question":
+            "Which of the following is used to style a Text widget in Flutter?",
+        "options": [
+          "TextStyle",
+          "TextDecoration",
+          "FontStyle",
+          "FontDecoration"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the use of the Navigator widget in Flutter?",
+        "options": [
+          "To manage navigation between screens",
+          "To add animations",
+          "To create a floating action button",
+          "To manage state"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "How do you create a new StatefulWidget in Flutter?",
+        "options": [
+          "Create a class extending StatefulWidget",
+          "Create a class extending StatelessWidget",
+          "Create a class extending State",
+          "Create a class extending FlutterWidget"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "Which widget is used to build a scrolling list of items?",
+        "options": ["ListView", "Column", "Row", "Stack"],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question": "What is the purpose of the build method in Flutter?",
+        "options": [
+          "To build the widget tree",
+          "To initialize state",
+          "To handle user input",
+          "To manage animations"
+        ],
+        "correctOption": 0,
+        "points": 10
+      },
+      {
+        "question":
+            "Which widget would you use to create an input form in Flutter?",
+        "options": ["TextField", "Form", "Input", "Both TextField and Form"],
+        "correctOption": 3,
+        "points": 10
       }
     ]
   };

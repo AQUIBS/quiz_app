@@ -1,14 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quiz_app/constants/data.dart';
+
 import 'package:quiz_app/models/data/dummie.dart';
 import 'package:quiz_app/models/question_model.dart';
 import 'package:quiz_app/models/quiz_model.dart';
-
-// ignore: constant_identifier_names
-enum Answer { correct, wrong, uncheck, skiped }
-
-const String rectQuiz = "ReactQuestions";
-const String flutterQuiz = "FlutterQuestions";
 
 final quizProvider =
     StateNotifierProvider<QuizContoller, QuizModel>((ref) => QuizContoller());
@@ -16,29 +12,35 @@ final quizProvider =
 class QuizContoller extends StateNotifier<QuizModel> {
   QuizContoller() : super(QuizModel.init());
 
-  void loadQuestion() {
-    final questions = QuestionsModel.loaded(rectQuiz, state.questionsIndex!);
-    Map<String, dynamic> rawdata = SampleData().data;
-    if (rawdata.isNotEmpty) {
-      List<Map<String, dynamic>> data = rawdata[rectQuiz];
-      state = state.copyWith(questionCount: data.length);
-      state = state.copyWith(
-        question: questions,
-      );
+  void loadData(String questionCode) {
+    List<QuestionsModel> model = [];
+
+    print("**** $questionCode ****".toUpperCase());
+    Map<String, dynamic> data = SampleData().data;
+
+    List<Map<String, dynamic>> loaded = data[questionCode];
+
+    for (var question in loaded) {
+      model.add(QuestionsModel.fromJson(question));
     }
-    print(state.questionsIndex);
-    print("Report Len: ${state.report!.length}");
+    state = state.copyWith(questionsArray: [...model]);
+  }
+
+  void loadQuestion() {
+    state = state.copyWith(questionCount: state.questionsArray!.length);
   }
 
   void check(int inputOption) {
     state = state.copyWith(
       userSelectedOption: inputOption,
-      correctOption: state.question!.correctOption,
+      correctOption: state.questionsArray![state.questionsIndex!].correctOption,
     );
 
-    if (inputOption == state.question!.correctOption) {
+    if (inputOption ==
+        state.questionsArray![state.questionsIndex!].correctOption) {
       state = state.copyWith(
-          score: state.score! + state.question!.points!,
+          score: state.score! +
+              state.questionsArray![state.questionsIndex!].points!,
           answer: Answer.correct);
     } else {
       state = state = state.copyWith(score: state.score!, answer: Answer.wrong);
@@ -53,7 +55,6 @@ class QuizContoller extends StateNotifier<QuizModel> {
   void nextQuestion() {
     int counter = state.questionsIndex!;
     if (state.questionCount == state.questionsIndex! + 1) {
-      print("*************{ FINISH }***********");
       state = state.copyWith(onComplete: true);
     } else {
       state = state.copyWith(questionsIndex: counter + 1);
@@ -71,7 +72,6 @@ class QuizContoller extends StateNotifier<QuizModel> {
     state = state.copyWith(report: [...state.report!, state.answer!]);
 
     if (state.questionCount == state.questionsIndex! + 1) {
-      print("*************{ FINISH }***********");
       state = state.copyWith(onComplete: true);
     } else {
       state = state.copyWith(

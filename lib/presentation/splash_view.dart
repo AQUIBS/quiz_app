@@ -1,17 +1,19 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/constants/color.dart';
 import 'package:quiz_app/constants/text.dart';
+import 'package:quiz_app/controller/searchbar_contoller.dart';
 import 'dashboard/dashboard_view.dart';
 
-class SplashView extends StatefulWidget {
+class SplashView extends ConsumerStatefulWidget {
   const SplashView({super.key});
 
   @override
-  State<SplashView> createState() => _SplashViewState();
+  ConsumerState<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends State<SplashView> {
+class _SplashViewState extends ConsumerState<SplashView> {
   @override
   void initState() {
     autoNavigateToDashBoardView();
@@ -34,6 +36,8 @@ class _SplashViewState extends State<SplashView> {
 
   void autoNavigateToDashBoardView() {
     Timer(const Duration(seconds: 3), () {
+      ref.read(dashBoardProvider.notifier).loadTemplate();
+
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (_) => const DashBoardView()));
     });

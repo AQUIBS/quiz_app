@@ -1,7 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'data/dummie.dart';
 
+
+
+
+
+
+
 class QuestionsModel {
+  
   String? question;
   List<String>? options;
   int? correctOption;
@@ -17,9 +24,9 @@ class QuestionsModel {
     points = json['points'];
   }
 
-  factory QuestionsModel.loaded(String type, int questionIndex) {
+  factory QuestionsModel.loaded(String questionCode, int questionIndex) {
     Map<String, dynamic> rawdata = SampleData().data;
-    return QuestionsModel.fromJson(rawdata[type][questionIndex]);
+    return QuestionsModel.fromJson(rawdata[questionCode][questionIndex]);
   }
 
   Map<String, dynamic> toJson() {

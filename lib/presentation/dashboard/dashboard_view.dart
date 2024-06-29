@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/constants/color.dart';
+import 'package:quiz_app/constants/enums.dart';
 import 'package:quiz_app/constants/text.dart';
 import 'package:quiz_app/controller/quiz_controller.dart';
+import 'package:quiz_app/controller/searchbar_contoller.dart';
 import 'package:quiz_app/presentation/dashboard/component/navigationbar.dart';
 import 'package:quiz_app/presentation/quizboard/quiz_view.dart';
 
@@ -39,6 +41,8 @@ class QuizPalette extends ConsumerWidget {
   });
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final template = ref.read(dashBoardProvider);
+
     return GridView.builder(
         physics: const BouncingScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -47,11 +51,13 @@ class QuizPalette extends ConsumerWidget {
             crossAxisSpacing: 15,
             childAspectRatio: 0.92),
         shrinkWrap: true,
-        itemCount: 6,
+        itemCount: template.length,
         itemBuilder: (constext, index) {
           return InkWell(
             onTap: () {
-              ref.read(quizProvider.notifier).loadQuestion();
+              ref
+                  .read(quizProvider.notifier)
+                  .loadData(template[index].questionCode!);
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => const QuizView()));
             },
@@ -63,15 +69,15 @@ class QuizPalette extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(22)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
+                children: [
+                  const Icon(
                     Icons.ac_unit_rounded,
                     size: 70,
                     color: AppColors.primaryGreen,
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Text(
-                    "React.JS",
+                    template[index].name!,
                     style: AppTheme.spaceTitle1,
                   )
                 ],
@@ -92,7 +98,7 @@ class GreetingWidget extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.only(top: 20),
       child: Text(
-        "Hello",
+        Constant.hello,
         style: AppTheme.urbanistsubTitle1,
       ),
     );
@@ -109,20 +115,20 @@ class DefaultWelcomeText extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.only(bottom: 20),
       child: Text(
-        "What Subject do\nyou want to improve Today?",
+        Constant.discription,
         style: AppTheme.spaceHeadline,
       ),
     );
   }
 }
 
-class UserName extends StatelessWidget {
+class UserName extends ConsumerWidget {
   const UserName({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return const Padding(
         padding: EdgeInsets.only(top: 3, bottom: 20),
         child: Text("Brooklyn Simmoms", style: AppTheme.spaceSubtile2));
