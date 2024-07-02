@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/constants/color.dart';
 import 'package:quiz_app/constants/enums.dart';
@@ -41,7 +42,7 @@ class QuizPalette extends ConsumerWidget {
   });
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final template = ref.read(dashBoardProvider);
+    final template = ref.watch(dashBoardProvider);
 
     return GridView.builder(
         physics: const BouncingScrollPhysics(),
@@ -58,6 +59,7 @@ class QuizPalette extends ConsumerWidget {
               ref
                   .read(quizProvider.notifier)
                   .loadData(template[index].questionCode!);
+              SystemChannels.textInput.invokeMethod("TextInput.hide");
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => const QuizView()));
             },
@@ -135,15 +137,30 @@ class UserName extends ConsumerWidget {
   }
 }
 
-class SearchBar extends StatelessWidget {
+class SearchBar extends ConsumerStatefulWidget {
   const SearchBar({
     super.key,
   });
 
   @override
+  ConsumerState<SearchBar> createState() => _SearchBarState();
+}
+
+class _SearchBarState extends ConsumerState<SearchBar> {
+  final TextEditingController _searchController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: _searchController,
       cursorColor: AppColors.primaryGreen,
+      onChanged: (value) {
+        if (value.length >= 3) {
+          ref.read(dashBoardProvider.notifier).search(value);
+        }
+        if (value.isEmpty) {
+          ref.read(dashBoardProvider.notifier).loadTemplate();
+        }
+      },
       decoration: InputDecoration(
         prefixIcon: const Icon(
           Icons.search,

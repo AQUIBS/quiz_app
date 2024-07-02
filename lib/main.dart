@@ -4,6 +4,7 @@ import 'package:quiz_app/constants/color.dart';
 import 'package:quiz_app/presentation/splash_view.dart';
 
 void main() {
+  
   runApp(const ProviderScope(child: MyApp()));
 }
 

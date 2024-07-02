@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/constants/color.dart';
 import 'package:quiz_app/constants/text.dart';
 import 'package:quiz_app/controller/quiz_controller.dart';
+import 'package:quiz_app/controller/searchbar_contoller.dart';
 import 'package:quiz_app/presentation/quizboard/component/button.dart';
 
 import 'component/questions_template.dart';
@@ -13,6 +14,7 @@ class QuizView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final quiz = ref.watch(quizProvider);
+    final dashboard = ref.read(dashBoardProvider);
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
@@ -38,8 +40,8 @@ class QuizView extends ConsumerWidget {
             )),
         title: Column(
           children: [
-            const Text(
-              "React JS Quiz",
+             Text(
+              ".Quiz",
               style: AppTheme.spaceTitle3,
             ),
             Text(

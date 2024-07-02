@@ -19,11 +19,16 @@ class DashBoardController extends StateNotifier<List<TemplateModel>> {
     for (var element in Constant.templates) {
       templateModel.add(TemplateModel.fromJson(element));
     }
-
     state = [...templateModel];
   }
 
-  void search(String value) {}
+  void search(String value) {
+    final search = state.where((element) =>
+        element.name.toString().toLowerCase().contains(value.toLowerCase()));
+    state = [...search];
+  }
 
-  void selected(int index) {}
+  void selected(int index) {
+    
+  }
 }

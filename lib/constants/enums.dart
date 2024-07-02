@@ -1,7 +1,7 @@
 enum Answer { correct, wrong, uncheck, skiped }
 
 class Constant {
-  static const geminikey = "AIzaSyBk3XaFzIr1pzKA5nukmfaH21y0irUEtEk";
+  ///"AIzaSyBk3XaFzIr1pzKA5nukmfaH21y0irUEtEk";
 
   static const hello = "Hello";
   static const discription = "What Langauge do\nyou want to improve Today?";
